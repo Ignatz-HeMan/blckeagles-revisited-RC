@@ -45,6 +45,10 @@ while {_dis < _maxDist} do
 	_dis = _posWreck distance _pos;
 };
 
+if (count _posWreck == 3) exitwith {		// No safe pos found!!!
+	_objs
+};
+
 // spawn a wreck near the mission center
 _fire = createVehicle [_wreckSelected, [0,0,0], [], 0, "can_collide"];
 _fire setVariable ["LAST_CHECK", (diag_tickTime + 14400)];
